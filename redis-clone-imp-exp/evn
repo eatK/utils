@@ -1,0 +1,12 @@
+python  -m venv venv  新建环境-要建目录
+source venv/bin/activate  切环境
+pip install -r requirements.txt 初始化-一次就好（pip install redis）
+
+针对 redis3做了特殊处理。redis7之后会报错
+
+python redis_cluster_migrate.py export   --host 127.0.0.1 --port 7000   --password "l&sb;=vWn"   --format sqlite   --output backup.db
+
+
+  python redis_cluster_migrate.py import --host 127.0.0.1 --port 7000   --password ""   --format sqlite  --input backup.db
+
+venv/bin/python  redis_cluster_migrate.py export   --host 127.0.0.1 --port 7000   --password "l&sb;=vWn"   --format sqlite   --output backup.db
